@@ -6,29 +6,33 @@
 @theme {
   --font-sans: "Inter", sans-serif;
 
-  /* Light mode (default) */
   --color-page: #f7f8fc;
   --color-surface: #ffffff;
+  --color-sidebar: #ffffff;
+  --color-card: #ffffff;
   --color-heading: #17233d;
   --color-body: #536179;
   --color-border: #e2e8f0;
   --color-input: #ffffff;
   --color-input-border: #d1d5db;
   --color-muted: #64748b;
+  --color-accent: #7c3aed;
 }
 
-/* Dark mode overrides */
 .dark {
   color-scheme: dark;
 
-  --color-page: #0b1220;
-  --color-surface: #111827;
-  --color-heading: #f1f5f9;
+  --color-page: #080b14;
+  --color-surface: #0f1219;
+  --color-sidebar: #0c0f18;
+  --color-card: #12151f;
+  --color-heading: #f8fafc;
   --color-body: #94a3b8;
-  --color-border: #334155;
-  --color-input: #1e293b;
-  --color-input-border: #475569;
+  --color-border: #1e293b;
+  --color-input: #0d1118;
+  --color-input-border: #243044;
   --color-muted: #64748b;
+  --color-accent: #a78bfa;
 }
 
 :root {
@@ -41,7 +45,179 @@
     background-color: var(--color-page);
     color: var(--color-heading);
     transition:
+      background-color 0.35s ease,
+      color 0.35s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(90deg, #a855f7, #6366f1, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-btn {
+    background: linear-gradient(90deg, #7c3aed, #6366f1, #2563eb);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .gradient-btn:hover {
+    background: linear-gradient(90deg, #6d28d9, #4f46e5, #1d4ed8);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px -8px rgb(99 102 241 / 0.55);
+  }
+
+  .gradient-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes dropdown-in {
+    from {
+      opacity: 0;
+      transform: translateY(-6px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes logo-pop {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.55s ease-out both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out both;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.35s ease-out both;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.25s ease-out both;
+  }
+
+  .animate-dropdown-in {
+    animation: dropdown-in 0.22s ease-out both;
+  }
+
+  .animate-logo-pop {
+    animation: logo-pop 0.45s ease-out;
+  }
+
+  .animate-shimmer {
+    background-size: 200% auto;
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  .stagger-1 {
+    animation-delay: 0.05s;
+  }
+  .stagger-2 {
+    animation-delay: 0.1s;
+  }
+  .stagger-3 {
+    animation-delay: 0.15s;
+  }
+  .stagger-4 {
+    animation-delay: 0.2s;
+  }
+  .stagger-5 {
+    animation-delay: 0.25s;
+  }
+  .stagger-6 {
+    animation-delay: 0.3s;
+  }
+
+  .hover-lift {
+    transition:
+      transform 0.2s ease,
       background-color 0.2s ease,
       color 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateX(3px);
+  }
+
+  .sidebar-brand-text {
+    animation: slide-in-right 0.3s ease-out both;
   }
 }

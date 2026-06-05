@@ -13,7 +13,7 @@ function Hero() {
         technical <br />
         recommendations, timeline, cost estimation and more.
       </p>
-      <div className="mt-[53px] flex flex-col gap-[26px] rounded-lg border border-border bg-surface px-[26px] py-[3px] shadow-md">
+      <div className="mt-[53px] flex flex-col gap-[26px] rounded-lg border border-border bg-surface px-[26px] py-[30px] shadow-md">
         <h2 className="text-start text-[18px] leading-[28px] font-semibold text-heading">
           Describe Your App Idea
         </h2>
