@@ -1,6 +1,5 @@
 import starIcon from "../assets/star.svg";
 import Textarea from "./Textarea";
-
 function Hero() {
   return (
     <div className="mx-auto pt-[72px] lg:w-4xl">
