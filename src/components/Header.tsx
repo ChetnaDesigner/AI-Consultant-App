@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTheme } from "../context/themecontext";
+import { useTheme } from "../context/ThemeContext";
 
 function SunIcon({ className }: { className?: string }) {
   return (
