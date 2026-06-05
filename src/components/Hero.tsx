@@ -1,5 +1,5 @@
 import starIcon from "../assets/star.svg";
-import Textarea from "./textarea";
+import Textarea from "./Textarea";
 
 function Hero() {
   return (

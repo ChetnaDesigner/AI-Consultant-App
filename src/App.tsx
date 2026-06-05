@@ -1,7 +1,7 @@
-import { SidebarProvider } from "./context/sidebarcontext";
-import Sidebar from "./components/sidebar";
-import Header from "./components/header";
-import IdeaInput from "./components/ideainput";
+import { SidebarProvider } from "./context/SidebarContext";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import IdeaInput from "./components/IdeaInput";
 
 function App() {
   return (

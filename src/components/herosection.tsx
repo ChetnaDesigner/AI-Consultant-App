@@ -1,4 +1,4 @@
-import IdeaInput from "./ideainput";
+import IdeaInput from "./IdeaInput";
 
 const features = [
   { icon: "✨", label: "AI Powered" },

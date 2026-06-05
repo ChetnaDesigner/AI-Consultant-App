@@ -1,4 +1,4 @@
-import { useSidebar } from "../context/sidebarcontext";
+import { useSidebar } from "../context/SidebarContext";
 
 const navItems = [
   { label: "Dashboard", icon: "▦", active: true },
