@@ -22,12 +22,12 @@ function Sidebar() {
 
   return (
     <aside
-      className={`flex shrink-0 flex-col border-r border-border bg-sidebar transition-[width,padding] duration-300 ease-in-out ${
+      className={`flex shrink-0 flex-col border-r border-white/10 bg-white/[0.03] backdrop-blur-sm transition-[width,padding] duration-300 ease-in-out ${
         iconOnly ? "w-[72px]" : "w-[260px]"
       }`}
     >
       <div
-        className={`border-b border-border transition-all duration-300 ${
+        className={`border-b border-white/10 transition-all duration-300 ${
           iconOnly ? "px-3 py-4" : "px-5 py-5"
         }`}
       >
@@ -35,12 +35,22 @@ function Sidebar() {
           type="button"
           onClick={toggleSidebar}
           aria-label={iconOnly ? "Expand sidebar" : "Collapse sidebar"}
-          className={`group flex w-full items-center rounded-xl transition-all duration-200 hover:bg-surface/60 active:scale-[0.98] ${
+          className={`group flex w-full items-center rounded-xl transition-all duration-200 hover:bg-white/5 active:scale-[0.98] ${
             iconOnly ? "justify-center" : "gap-3 px-1 py-1"
           }`}
         >
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-lg transition-transform duration-200 group-hover:scale-110 group-active:animate-logo-pop">
-            🤖
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 transition-transform duration-200 group-hover:scale-110 group-active:animate-logo-pop">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden
+            >
+              <rect x="3" y="5" width="14" height="2" rx="1" fill="#22D3EE" />
+              <rect x="3" y="9" width="10" height="2" rx="1" fill="#22D3EE" />
+              <rect x="3" y="13" width="6" height="2" rx="1" fill="#22D3EE" />
+            </svg>
           </span>
           {!iconOnly && (
             <span className="sidebar-brand-text min-w-0 text-left">
@@ -63,7 +73,7 @@ function Sidebar() {
         <button
           type="button"
           title="New Project"
-          className={`gradient-btn animate-fade-in-up mb-6 flex items-center justify-center rounded-xl text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 ${
+          className={`landing-cta-btn animate-fade-in-up mb-6 flex items-center justify-center rounded-xl text-sm font-semibold text-white ${
             iconOnly ? "mx-auto h-10 w-10" : "w-full gap-2 px-4 py-3"
           }`}
         >
@@ -87,8 +97,8 @@ function Sidebar() {
                   : "gap-3 px-3 py-2.5"
               } ${
                 item.active
-                  ? "bg-indigo-500/15 text-indigo-400"
-                  : "text-body hover:bg-surface hover:text-heading"
+                  ? "bg-violet-500/15 text-violet-300"
+                  : "text-slate-400 hover:bg-white/5 hover:text-white"
               }`}
             >
               <span
@@ -123,7 +133,7 @@ function Sidebar() {
                     key={project.name}
                     type="button"
                     style={{ animationDelay: `${index * 60}ms` }}
-                    className="hover-lift animate-fade-in-up flex w-full items-center gap-3 rounded-xl px-2 py-2 text-left hover:bg-surface"
+                    className="hover-lift animate-fade-in-up flex w-full items-center gap-3 rounded-xl px-2 py-2 text-left hover:bg-white/5"
                   >
                     <span
                       className={`h-8 w-8 shrink-0 rounded-lg ${project.color} opacity-90 transition-transform duration-200 hover:scale-105`}
@@ -139,7 +149,7 @@ function Sidebar() {
               </div>
             </div>
 
-            <div className="animate-scale-in stagger-3 mt-auto rounded-2xl border border-border bg-surface p-4">
+            <div className="animate-scale-in stagger-3 mt-auto rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
               <div className="mb-2 flex items-center gap-2">
                 <span className="text-xl">👑</span>
                 <p className="font-semibold text-heading">Upgrade to Pro</p>
@@ -149,7 +159,7 @@ function Sidebar() {
               </p>
               <button
                 type="button"
-                className="gradient-btn w-full rounded-xl py-2 text-sm font-semibold text-white"
+                className="landing-cta-btn w-full rounded-xl py-2 text-sm font-semibold text-white"
               >
                 Upgrade Now
               </button>
@@ -173,7 +183,7 @@ function Sidebar() {
               type="button"
               title="Upgrade to Pro"
               aria-label="Upgrade to Pro"
-              className="animate-scale-in stagger-3 mx-auto flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface text-lg transition-transform duration-200 hover:scale-110"
+              className="animate-scale-in stagger-3 mx-auto flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-lg transition-transform duration-200 hover:scale-110"
             >
               👑
             </button>

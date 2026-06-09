@@ -56,8 +56,8 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="animate-fade-in relative flex h-16 items-center justify-end gap-5 border-b border-border bg-page/90 px-4 backdrop-blur-md md:px-8">
-      <div className="flex items-center rounded-full border border-border bg-surface p-1">
+    <header className="animate-fade-in relative flex h-16 items-center justify-end gap-5 border-b border-white/10 bg-white/[0.03] px-4 backdrop-blur-md md:px-8">
+      <div className="flex items-center rounded-full border border-white/10 bg-white/5 p-1">
         <button
           type="button"
           onClick={() => setTheme("light")}
@@ -108,7 +108,7 @@ function Header() {
         </button>
 
         {menuOpen && (
-          <div className="animate-dropdown-in absolute right-0 z-20 mt-2 min-w-[140px] overflow-hidden rounded-xl border border-border bg-surface py-1 shadow-lg">
+          <div className="animate-dropdown-in absolute right-0 z-20 mt-2 min-w-[140px] overflow-hidden rounded-xl border border-white/10 bg-[#0f1219]/95 py-1 shadow-lg backdrop-blur-md">
             <button
               type="button"
               onClick={() => setMenuOpen(false)}

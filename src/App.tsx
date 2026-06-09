@@ -1,24 +1,15 @@
-import { SidebarProvider } from "./context/SidebarContext";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
-import IdeaInput from "./components/IdeaInput";
+import { useState } from "react";
+import LandingPage from "./components/landing-page/LandingPage";
+import Dashboard from "./pages/dashboard";
 
 function App() {
-  return (
-    <SidebarProvider>
-      <div className="flex min-h-screen bg-page text-heading">
-        <Sidebar />
+  const [showDashboard, setShowDashboard] = useState(false);
 
-        <div className="flex min-w-0 flex-1 flex-col">
-          <Header />
+  if (showDashboard) {
+    return <Dashboard />;
+  }
 
-          <main className="animate-fade-in-up stagger-1 flex-1 px-4 py-6 md:px-8">
-            <IdeaInput />
-          </main>
-        </div>
-      </div>
-    </SidebarProvider>
-  );
+  return <LandingPage onGetStarted={() => setShowDashboard(true)} />;
 }
 
 export default App;
