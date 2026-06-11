@@ -326,6 +326,42 @@
     animation: landing-slide-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
+  @keyframes proposal-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes proposal-pulse-bar {
+    0%,
+    100% {
+      transform: scaleX(0.25);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  .proposal-spinner {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    border: 2px solid rgb(255 255 255 / 25%);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: proposal-spin 0.7s linear infinite;
+  }
+
+  .proposal-loading-bar {
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #22d3ee, #818cf8, #c084fc, #f472b6);
+    transform-origin: left;
+    animation: proposal-pulse-bar 1.4s ease-in-out infinite;
+  }
+
   .gradient-btn {
     background: linear-gradient(90deg, #7c3aed, #6366f1, #2563eb);
     transition:

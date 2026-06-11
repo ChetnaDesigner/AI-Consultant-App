@@ -1,7 +1,7 @@
 import IdeaInput from "./IdeaInput";
 
 const features = [
-  { icon: "✨", label: "AI Powered" },
+  { icon: "✨", label: "AI-Powered" },
   { icon: "📄", label: "Detailed Proposals" },
   { icon: "⏱", label: "Time & Cost Estimation" },
   { icon: "🛠", label: "Best Tech Recommendations" },
@@ -12,8 +12,8 @@ function HeroSection() {
     <section className="relative mb-10 pt-8">
       <div className="max-w-3xl">
         <h1 className="text-4xl font-extrabold leading-tight text-heading md:text-5xl">
-          AI Software Development{" "}
-          <span className="gradient-text">Consultant</span>
+          AI Software{" "}
+          <span className="gradient-text">Development Consultant</span>
         </h1>
         <p className="mt-3 text-base text-body md:text-lg">
           Describe your app idea and get a complete project proposal in seconds.

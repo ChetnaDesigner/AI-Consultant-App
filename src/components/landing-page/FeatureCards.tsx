@@ -52,20 +52,24 @@ function FeatureCards() {
   return (
     <section
       id="features"
-      className="mx-auto grid w-full max-w-5xl gap-4 px-4 sm:grid-cols-3"
+      className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
     >
       {features.map((feature, index) => (
         <div
           key={feature.title}
-          className={`landing-feature-card animate-landing-blur-in ${staggerClasses[index]} rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm`}
+          className={`landing-feature-card animate-landing-blur-in ${staggerClasses[index]} rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm sm:p-5`}
         >
           <div
-            className={`landing-feature-icon mb-4 flex h-10 w-10 items-center justify-center rounded-lg ${feature.iconBg}`}
+            className={`landing-feature-icon mb-3 flex h-9 w-9 items-center justify-center rounded-lg sm:mb-4 sm:h-10 sm:w-10 ${feature.iconBg}`}
           >
             {feature.icon}
           </div>
-          <h3 className="text-sm font-semibold text-white">{feature.title}</h3>
-          <p className="mt-1 text-sm text-slate-400">{feature.description}</p>
+          <h3 className="text-sm font-semibold text-white sm:text-base">
+            {feature.title}
+          </h3>
+          <p className="mt-1 text-xs text-slate-400 sm:text-sm">
+            {feature.description}
+          </p>
         </div>
       ))}
     </section>

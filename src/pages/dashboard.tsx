@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SidebarProvider } from "../context/SidebarContext";
 import { useTheme } from "../context/ThemeContext";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import IdeaInput from "../components/IdeaInput";
 import RightSection from "../components/RightSection";
+import GeneratedProposal from "../components/GeneratedProposal";
 
 function Dashboard() {
   const { setTheme } = useTheme();
+  const [submittedIdea, setSubmittedIdea] = useState<string | null>(null);
 
   useEffect(() => {
     setTheme("dark");
@@ -26,9 +28,10 @@ function Dashboard() {
           <div className="flex min-w-0 flex-1 flex-col">
             <Header />
 
-            <main className="animate-fade-in-up stagger-1 flex-1 px-4 py-6 md:px-8">
+            <main className="animate-fade-in-up stagger-1 flex-1 space-y-6 px-4 py-5 sm:space-y-8 sm:px-6 sm:py-6 md:px-8">
               <RightSection />
-              <IdeaInput />
+              <IdeaInput onSuccess={setSubmittedIdea} />
+              {submittedIdea && <GeneratedProposal idea={submittedIdea} />}
             </main>
           </div>
         </div>

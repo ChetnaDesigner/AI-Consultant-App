@@ -117,7 +117,7 @@ function Sidebar() {
           <>
             <div className="animate-fade-in mt-8">
               <div className="mb-3 flex items-center justify-between">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                <p className="text-xs font-semibold text-muted">
                   Recent Projects
                 </p>
                 <button
