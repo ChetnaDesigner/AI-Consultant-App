@@ -50,12 +50,6 @@ function IdeaInput({ onSuccess }: IdeaInputProps) {
 
   return (
     <div className="animate-fade-in-up w-full max-w-4xl space-y-3">
-      {!hasGenerated && (
-        <p className="text-base leading-relaxed text-slate-400 sm:text-lg">
-          Describe your app idea to generate a complete development proposal.
-        </p>
-      )}
-
       <textarea
         value={appIdea}
         onChange={handleIdeaChange}
