@@ -1,19 +1,22 @@
 import { useSidebar } from "../context/SidebarContext";
+import { recentProjects } from "../constants/sidebarData";
+import {
+  BrandLogoIcon,
+  CrownIcon,
+  DashboardIcon,
+  HistoryIcon,
+  PlusIcon,
+  SettingsIcon,
+  StarIcon,
+  TemplatesIcon,
+} from "./icons";
 
 const navItems = [
-  { label: "Dashboard", icon: "▦", active: true },
-  { label: "History", icon: "↻" },
-  { label: "Saved Projects", icon: "★" },
-  { label: "Templates", icon: "▤" },
-  { label: "Settings", icon: "⚙" },
-];
-
-const recentProjects = [
-  { name: "Food Delivery App", time: "2 min ago", color: "bg-orange-500" },
-  { name: "Fitness Tracking App", time: "1 hr ago", color: "bg-emerald-500" },
-  { name: "E-commerce Platform", time: "3 hr ago", color: "bg-blue-500" },
-  { name: "Social Media App", time: "Yesterday", color: "bg-pink-500" },
-  { name: "Learning Management", time: "2 days ago", color: "bg-violet-500" },
+  { label: "Dashboard", Icon: DashboardIcon, active: true },
+  { label: "History", Icon: HistoryIcon },
+  { label: "Saved Projects", Icon: StarIcon },
+  { label: "Templates", Icon: TemplatesIcon },
+  { label: "Settings", Icon: SettingsIcon },
 ];
 
 function Sidebar() {
@@ -40,17 +43,7 @@ function Sidebar() {
           }`}
         >
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 transition-transform duration-200 group-hover:scale-110 group-active:animate-logo-pop">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              aria-hidden
-            >
-              <rect x="3" y="5" width="14" height="2" rx="1" fill="#22D3EE" />
-              <rect x="3" y="9" width="10" height="2" rx="1" fill="#22D3EE" />
-              <rect x="3" y="13" width="6" height="2" rx="1" fill="#22D3EE" />
-            </svg>
+            <BrandLogoIcon className="text-cyan-400" size={20} />
           </span>
           {!iconOnly && (
             <span className="sidebar-brand-text min-w-0 text-left">
@@ -77,8 +70,8 @@ function Sidebar() {
             iconOnly ? "mx-auto h-10 w-10" : "w-full gap-2 px-4 py-3"
           }`}
         >
-          <span className="text-lg leading-none transition-transform duration-200 group-hover:rotate-90">
-            +
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center transition-transform duration-200 group-hover:rotate-90">
+            <PlusIcon size={18} />
           </span>
           {!iconOnly && "New Project"}
         </button>
@@ -102,11 +95,11 @@ function Sidebar() {
               }`}
             >
               <span
-                className={`transition-transform duration-200 hover:scale-110 ${
-                  iconOnly ? "text-base" : "w-5 text-center"
+                className={`flex shrink-0 items-center justify-center transition-transform duration-200 hover:scale-110 ${
+                  iconOnly ? "" : "w-5"
                 }`}
               >
-                {item.icon}
+                <item.Icon size={18} />
               </span>
               {!iconOnly && item.label}
             </button>
@@ -151,7 +144,7 @@ function Sidebar() {
 
             <div className="animate-scale-in stagger-3 mt-auto rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
               <div className="mb-2 flex items-center gap-2">
-                <span className="text-xl">👑</span>
+                <CrownIcon className="text-amber-400" size={20} />
                 <p className="font-semibold text-heading">Upgrade to Pro</p>
               </div>
               <p className="mb-3 text-xs leading-5 text-body">
@@ -183,9 +176,9 @@ function Sidebar() {
               type="button"
               title="Upgrade to Pro"
               aria-label="Upgrade to Pro"
-              className="animate-scale-in stagger-3 mx-auto flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-lg transition-transform duration-200 hover:scale-110"
+              className="animate-scale-in stagger-3 mx-auto flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-transform duration-200 hover:scale-110"
             >
-              👑
+              <CrownIcon className="text-amber-400" size={18} />
             </button>
           </div>
         )}

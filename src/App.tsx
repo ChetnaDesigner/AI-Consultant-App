@@ -1,15 +1,7 @@
-import { useState } from "react";
-import LandingPage from "./components/landing-page/LandingPage";
-import Dashboard from "./pages/dashboard";
+import AppRouter from "./components/AppRouter";
 
 function App() {
-  const [showDashboard, setShowDashboard] = useState(false);
-
-  if (showDashboard) {
-    return <Dashboard />;
-  }
-
-  return <LandingPage onGetStarted={() => setShowDashboard(true)} />;
+  return <AppRouter />;
 }
 
 export default App;

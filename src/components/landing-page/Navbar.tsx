@@ -1,17 +1,9 @@
+import { BrandLogoIcon } from "../icons";
+
 function LogoIcon() {
   return (
     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-500/10 transition-transform duration-300 hover:scale-110">
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        aria-hidden
-      >
-        <rect x="3" y="5" width="14" height="2" rx="1" fill="#22D3EE" />
-        <rect x="3" y="9" width="10" height="2" rx="1" fill="#22D3EE" />
-        <rect x="3" y="13" width="6" height="2" rx="1" fill="#22D3EE" />
-      </svg>
+      <BrandLogoIcon className="text-cyan-400" size={20} />
     </div>
   );
 }

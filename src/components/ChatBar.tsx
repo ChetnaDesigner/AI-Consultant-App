@@ -1,3 +1,5 @@
+import { BotIcon } from "./icons";
+
 function ChatBar() {
   return (
     <div className="sticky bottom-0 border-t border-border bg-surface px-6 py-4">
@@ -16,7 +18,9 @@ function ChatBar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="text-2xl">🤖</span>
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-600/20 text-indigo-400">
+            <BotIcon size={18} />
+          </span>
           <div>
             <p className="text-sm font-medium text-heading">AI is thinking...</p>
             <div className="mt-1 flex gap-1">

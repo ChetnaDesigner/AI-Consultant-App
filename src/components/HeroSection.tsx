@@ -1,10 +1,17 @@
 import IdeaInput from "./IdeaInput";
+import {
+  BrainIcon,
+  ClockIcon,
+  DocumentIcon,
+  SparklesIcon,
+  WrenchIcon,
+} from "./icons";
 
 const features = [
-  { icon: "✨", label: "AI-Powered" },
-  { icon: "📄", label: "Detailed Proposals" },
-  { icon: "⏱", label: "Time & Cost Estimation" },
-  { icon: "🛠", label: "Best Tech Recommendations" },
+  { Icon: SparklesIcon, label: "AI-Powered" },
+  { Icon: DocumentIcon, label: "Detailed Proposals" },
+  { Icon: ClockIcon, label: "Time & Cost Estimation" },
+  { Icon: WrenchIcon, label: "Best Tech Recommendations" },
 ];
 
 function HeroSection() {
@@ -29,7 +36,7 @@ function HeroSection() {
               key={feature.label}
               className="flex items-center gap-2 text-sm text-body"
             >
-              <span>{feature.icon}</span>
+              <feature.Icon size={16} className="text-indigo-400" />
               <span>{feature.label}</span>
             </div>
           ))}
@@ -40,8 +47,8 @@ function HeroSection() {
         className="pointer-events-none absolute top-0 right-0 hidden h-48 w-48 rounded-3xl bg-gradient-to-br from-indigo-500/20 via-violet-500/10 to-cyan-500/20 lg:block xl:h-56 xl:w-56"
         aria-hidden
       >
-        <div className="flex h-full items-center justify-center text-7xl opacity-80">
-          🧠
+        <div className="flex h-full items-center justify-center text-indigo-400 opacity-80">
+          <BrainIcon size={72} />
         </div>
       </div>
     </section>
